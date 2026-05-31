@@ -25,7 +25,6 @@ const UpdateStudent = () => {
          const response = await axios.get(
             `${import.meta.env.VITE_API_URL}/api/auth/user/${id}`,
          );
-         console.log(response);
         setFormData({
            name: response.data.payload.name || "",
            email: response.data.payload.email || "",

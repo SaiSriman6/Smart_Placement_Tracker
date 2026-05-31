@@ -34,7 +34,6 @@ const ManageStudents = () => {
     try {
       setLoading(true);
       setError('');
-      console.log("")
       const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/user`);
       setStudents(response.data.payload || []);
     } catch (err) {
@@ -365,7 +364,6 @@ const ManageStudents = () => {
                     >
                       {student.isPlaced ? 'Placed' : 'Unplaced'}
                     </button>
-                    {console.log(student)}
 
                   </td>
 

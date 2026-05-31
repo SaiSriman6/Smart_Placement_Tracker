@@ -339,7 +339,6 @@ const AdminDashboard = () => {
                 radius={[4, 4, 0, 0]}
               />
             </BarChart>
-            {console.log("API URL:", import.meta.env.VITE_API_URL)}
           </ResponsiveContainer>
         </div>
       </div>

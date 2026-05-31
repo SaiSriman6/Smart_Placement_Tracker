@@ -160,6 +160,14 @@ export const updateUser = async (req, res) => {
          "skills"
       ];
 
+       if (req.user.role === "admin") {
+         allowedFields = [
+         ...allowedFields,
+          "isActive",
+         "isPlaced"
+     ];
+    }
+
       const updateData = {};
 
       allowedFields.forEach((field) => {
