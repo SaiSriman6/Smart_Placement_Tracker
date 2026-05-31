@@ -13,7 +13,9 @@ app.use(exp.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173',
+    'https://smart-placement-tracker-rust.vercel.app'
+  ],
   credentials: true
 }));
 
