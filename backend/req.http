@@ -1,0 +1,183 @@
+### register User
+POST http://localhost:4000/api/auth/register
+Content-Type: application/json
+
+{
+    "name":"sriman1",
+    "email":"23eg110a65@anurag.edu.in",
+    "password":"12345678",
+    "role":"student"
+}
+
+### get users
+GET http://localhost:4000/api/auth/user
+
+
+### get User By ID
+GET http://localhost:4000/api/auth/user/6a11ff9fdc07667df96c363a
+
+### login
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"23eg110a65@anurag.edu.in",
+    "password":"12345678"
+}
+
+### admin login
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"admin@gmail.com",
+    "password":"12345678"
+}
+
+### update user
+PUT http://localhost:4000/api/auth/6a141c1dd71ede9af1059f90
+Content-Type: application/json
+
+{
+   "cgpa":8,
+   "skills":["Java","React","MongoDB"],
+   "phone":"9800543210"
+}
+
+### update core details of user
+
+
+### logout
+POST http://localhost:4000/api/auth/logout
+
+
+### company calls
+
+### create company
+POST http://localhost:4000/api/company
+Content-Type: application/json
+
+{
+   "name":"Infosys",
+   "description":"A technology company",
+   "location":"Pocharam, Hyderabad",
+   "package":10,
+   "eligibility":{
+      "minCGPA":7,
+      "maxBacklogs":0,
+      "branches":[
+         "CSE",
+         "IT",
+         "ECE"
+      ]
+   }
+}
+
+### get all companies
+GET http://localhost:4000/api/company
+
+### get company by ID
+GET http://localhost:4000/api/company/6a13d6b63f84dd7139d83040
+
+### update company
+PUT http://localhost:4000/api/company/6a13d6b63f84dd7139d83040
+Content-Type: application/json
+
+{
+    "name":"Google Inc.",
+    "description":"A multinational technology company",
+    "location":"Mountain View, California"
+}
+
+### delete company
+DELETE http://localhost:4000/api/company/6a13d6b63f84dd7139d83040
+
+
+### drive calls
+### create drives
+
+POST http://localhost:4000/api/drive
+Content-Type: application/json
+
+{
+    "title":"Infosys Drive 3",
+    "company":"6a14092f52d5a0286ee0dc68",
+    "description":"This is the third drive",
+    "driveDate":"2024-06-01T00:00:00.000Z",
+    "lastDateToApply":"2024-05-25T00:00:00.000Z",
+    "location":"Hyderabad"
+}
+
+### GET all drives
+GET http://localhost:4000/api/drive
+
+### Update drive
+PUT http://localhost:4000/api/drive/6a13e46aaa35e40d5b842d22
+Content-Type: application/json
+
+{
+    "title":"Drive 1 Updated",
+    "company":"6a14092f52d5a0286ee0dc68",
+    "description":"This is the first drive updated",
+    "driveDate":"2024-06-15T00:00:00.000Z",
+    "lastDateToApply":"2024-07-30T00:00:00.000Z",
+    "location":"Hyderabad"
+}
+
+### get drive by ID
+GET http://localhost:4000/api/drive/6a13e46aaa35e40d5b842d22
+
+### update Drive Status
+PUT http://localhost:4000/api/drive/6a13e46aaa35e40d5b842d22
+Content-Type: application/json
+
+{
+    "status": "upcoming"
+}
+
+### upcoming drives
+GET http://localhost:4000/api/drive/upcoming/all
+
+
+### add round
+PUT http://localhost:4000/api/drive/6a13e46aaa35e40d5b842d22/round
+Content-Type: application/json
+
+{
+    "roundName":"Round 1",
+    "description":"This is the first round",
+    "date":"2024-06-20T00:00:00.000Z"
+}
+
+### delete drive
+DELETE http://localhost:4000/api/drive/6a13e46aaa35e40d5b842d22
+
+
+### application calls
+### apply for drive
+POST http://localhost:4000/api/application
+Content-Type: application/json
+
+{
+    "student":"6a13d014686d09548feb825d",
+    "drive":"6a14099852d5a0286ee0dc69",
+    "resume":"https://example.com/resume.pdf"
+}
+
+### get applications of student
+GET http://localhost:4000/api/application/my-applications
+
+### get all applications for a drive
+GET http://localhost:4000/api/application
+
+### get application by ID
+GET http://localhost:4000/api/application/6a13ff972e38d1cec24e152f
+
+### update application status
+PUT http://localhost:4000/api/application/6a13ff972e38d1cec24e152f/status
+Content-Type: application/json
+
+{
+    "status":"shortlisted"
+}
+
