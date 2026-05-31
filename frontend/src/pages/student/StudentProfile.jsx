@@ -101,13 +101,16 @@ const StudentProfile = () => {
     };
 
     // Update profile details
-    await axios.put(
-      `${import.meta.env.VITE_API_URL}/api/auth/${user._id}`,
-      profilePayload,
-      {
-        withCredentials: true
-      }
-    );
+    // Update profile details
+   const response = await axios.put(
+   `${import.meta.env.VITE_API_URL}/api/auth/${user._id}`,
+   profilePayload,
+   {
+    withCredentials: true
+    }
+   );
+
+   setUser(response.data.payload);
 
     // Upload resume separately
    if (formData.resume instanceof File) {
