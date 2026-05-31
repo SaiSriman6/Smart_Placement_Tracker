@@ -139,38 +139,35 @@ export const updateStudentCoreDetails = async (req, res) => {
 export const updateUser = async (req, res) => {
 
    try {
- 
       // only student himself or admin
       if (
          req.user.role !== "admin" &&
          req.user._id !== req.params.id
       ) {
-     
-
+         
+         
          return res.status(403).json({
             message: "Access denied"
          });
-
+         
       }
-
+      
+      
       // editable fields for student
       const allowedFields = [
-         "phone",
-         "resumeUrl",
-         "skills"
-      ];
+   "phone",
+   "resumeUrl",
+   "skills"
+];
 
-       if (req.user.role === "admin") {
-         allowedFields = [
-         ...allowedFields,
-          "isActive",
-         "isPlaced"
-     ];
-    }
-
-      const updateData = {};
-
-      allowedFields.forEach((field) => {
+if (req.user.role === "admin") {
+   allowedFields.push("isActive", "isPlaced");
+}
+ 
+   
+   const updateData = {};
+   
+   allowedFields.forEach((field) => {
          if (req.body[field] !== undefined) {
             updateData[field] = req.body[field];
          }

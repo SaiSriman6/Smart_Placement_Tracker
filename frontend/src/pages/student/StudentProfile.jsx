@@ -152,7 +152,6 @@ const StudentProfile = () => {
       <div className="glass p-6 rounded-2xl border border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
 
         <div className="flex items-center gap-4">
-          {console.log(user)}
 
           <div className="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center font-bold text-brand-400 text-2xl uppercase">
             {user?.name?.charAt(0) || 'U'}
